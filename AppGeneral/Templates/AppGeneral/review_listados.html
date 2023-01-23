@@ -1,0 +1,28 @@
+{% extends "AppGeneral/sbs_index.html" %}
+
+{% load static %}
+
+{% block title %}
+    RESEÑAS
+{% endblock %}
+
+{% block titulo %}
+    Reseñas <br>
+{% endblock %}
+
+{% block subtitulo %}
+    {{ mensaje }}
+{% endblock %}
+
+{% block contenido %}
+    {% for review in reviews %}
+        <li style="text-align: center; clear: both; list-style: none;"> 
+            {{review.titulo}} - {{ review.subtitulo }} 
+            <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'review_mostrar' review.id %}"> Leer más... </a>
+            <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'review_borrar' review.id %}"> Eliminar  </a>
+        </li>
+    {% endfor %}
+    <div style="text-align: right;">
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'reviews' %}"> Volver </a>
+    </div>
+{% endblock %}

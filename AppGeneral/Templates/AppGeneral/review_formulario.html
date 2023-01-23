@@ -1,0 +1,27 @@
+{% extends "AppGeneral/sbs_index.html" %}
+
+{% load static %}
+
+{% block title %}
+    NUEVA RESEÑA
+{% endblock %}
+
+{% block titulo %}
+    {{ mensaje }}
+{% endblock %}
+
+{% block subtitulo %}
+    Lee las reseñas, agrega una nueva o modifica alguna de las existentes!
+{% endblock %}
+
+{% block contenido %} 
+    <form action="{% url 'review_formulario' %}" method="POST"> {% csrf_token %} 
+        <table>
+            {{ form.as_table }}
+        </table>
+        
+        <input class="btn btn-primary btn-xm rounded-pill mt-5" type="submit" value="Publicar">
+        <a class="btn btn-primary btn-xm rounded-pill mt-5" href="{% url 'reviews' %}"> Volver </a>
+    </form>
+    
+{% endblock %}

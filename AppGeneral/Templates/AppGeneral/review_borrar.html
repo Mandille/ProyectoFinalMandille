@@ -1,0 +1,18 @@
+{% extends "AppGeneral/sbs_index.html" %}
+
+{% load static %}
+
+{% block title %}
+    BORRAR RESEÑA
+{% endblock %}
+
+{% block titulo %}
+    {{ mensaje }}
+{% endblock %}
+
+{% block subtitulo %}
+    Lee las reseñas, agrega una nueva o modifica alguna de las existentes!
+{% endblock %}
+
+{% block boton-principal %}<a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'review_listados' %}"> Volver </a> {% endblock %}
+{% block boton-secundario %}<a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'review_formulario' %}"> Nueva Reseña </a> {% endblock %}

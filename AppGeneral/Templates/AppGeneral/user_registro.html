@@ -1,0 +1,27 @@
+{% extends "AppGeneral/sbs_index.html" %}
+
+{% load static %}
+
+{% block title %}
+    REGISTRARSE
+{% endblock %}
+
+{% block titulo %}
+    Registrarse
+{% endblock %}
+
+{% block subtitulo %}
+    {{ mensaje }}
+{% endblock %}
+
+{% block contenido %} 
+    <form action="{% url 'user_registro' %}" method="POST"> {% csrf_token %} 
+        <table>
+            {{ form.as_table }}
+        </table>
+        
+        <input class="btn btn-primary btn-xm rounded-pill mt-5" type="submit" value="Registrarse">
+        <a class="btn btn-primary btn-xm rounded-pill mt-5" href="{% url 'inicio' %}"> Volver </a>
+    </form>
+    
+{% endblock %}

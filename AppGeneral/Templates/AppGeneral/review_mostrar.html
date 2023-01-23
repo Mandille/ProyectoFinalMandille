@@ -1,0 +1,33 @@
+{% extends "AppGeneral/sbs_index.html" %}
+
+{% load static %}
+
+{% block title %}
+    RESEÑA - {{review.titulo}}
+{% endblock %}
+
+{% block titulo %}
+    {{ review.titulo }}
+{% endblock %}
+
+{% block subtitulo %}
+    {{review.subtitulo}}
+    {{ mensaje }}
+{% endblock %}
+
+{% block contenido %} 
+        <div style="text-align: center;">
+            <img src="{{ review.imagen }}" alt="{{ review.titulo }}">
+        </div>
+        <div style="text-align: center;">
+            <p>
+                {{ review.cuerpo }}
+                <br><div style="text-align:center;"><em> "{{ review.autor }}"</em></div>
+            </p>
+        </div>
+        <div style="text-align: right;">
+            <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'review_editar' post.id %}"> Editar </a>
+            <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'review_borrar' post.id %}"> Eliminar </a>
+            <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'review_listados' %}"> Volver </a>
+        </div> 
+{% endblock %}
