@@ -1,0 +1,29 @@
+{% extends "AppGeneral/sbs_index.html" %}
+
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block titulo %}
+    AGREGAR URL
+{% endblock %}
+
+{% block subtitulo %}
+    {{ mensaje }}
+{% endblock %}
+
+{% block contenido %} 
+    <div>
+        <form style="padding-left: 40%; padding-top: 1em;" action="{% url 'url_agregar' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %} 
+            <table>
+                {{ form.as_table }} 
+            </table>
+            
+            <div style="padding-left: 2%;">
+                <input class="btn btn-primary btn-xm rounded-pill mt-5" type="submit" value="Agregar">
+                <a class="btn btn-primary btn-xm rounded-pill mt-5" href="{% url 'user_perfil' %}"> Volver </a>
+            </div>
+        </form>
+    </div>   
+{% endblock %}

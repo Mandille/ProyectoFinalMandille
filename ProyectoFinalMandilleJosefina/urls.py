@@ -26,6 +26,7 @@ urlpatterns = [
     path ('', include('AppGeneral.urls')),
     path ('', include('AppMensaje.urls')),
     path ('', include('AppRegistro.urls')),
+    path ('ckeditor/',include('ckeditor_uploader.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

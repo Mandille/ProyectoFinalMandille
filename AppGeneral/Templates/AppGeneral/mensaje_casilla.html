@@ -1,0 +1,31 @@
+{% extends "AppGeneral/sbs_index.html" %}
+
+{% load static %}
+
+{% block title %}
+    Lista de mensajes <br>
+    {{ user.username }}
+{% endblock %}
+
+{% block titulo %}
+    BUZON DE MENSAJE <br>
+    {{ mensaje }}
+{% endblock %}
+
+{% block contenido %} 
+    {% for mensaje in mensajes %}
+    <li style="text-align: center; clear: both; list-style: none;"> 
+        Mensaje de {{mensaje.usuario}} - {{ mensaje.fecha }}
+        {% if mensaje.leido == False %}
+        <i class="fa-solid fa-envelope"></i>
+        {% else %}
+        <i class="fa-solid fa-envelope-open"></i>
+        {% endif %}
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'mensaje_mostrar' mensajes.id %}"> Leer</a>
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="#"> Eliminar</a>
+    </li>
+    {% endfor %}
+    <div style="text-align: center;">
+    <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'mensajes' %}"> Volver </a>
+    </div>
+{% endblock %} 

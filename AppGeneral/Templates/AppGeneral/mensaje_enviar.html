@@ -1,0 +1,24 @@
+{% extends "AppGeneral/sbs_index.html" %}
+
+{% load static %}
+
+{% block title %}
+    NUEVO MENSAJE
+{% endblock %}
+
+{% block titulo %}
+    MENSAJE
+{% endblock %}
+
+{% block contenido %} 
+    <form action="{% url 'enviar_mensaje' %}" method="POST" style="padding-left: 33%;"> {% csrf_token %} 
+        <table>
+            {{ form.as_table }}
+        </table>
+        <div style="padding-left: 15%;">
+            <input class="btn btn-primary btn-xm rounded-pill mt-5" type="submit" value="Enviar">
+            <a class="btn btn-primary btn-xm rounded-pill mt-5" href="{% url 'mensajes' %}"> Volver </a>
+        </div>
+    </form>
+
+{% endblock %} 

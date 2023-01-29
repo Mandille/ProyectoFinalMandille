@@ -26,8 +26,8 @@
             </p>
         </div>
         <div style="text-align: right;">
-            <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'review_editar' post.id %}"> Editar </a>
-            <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'review_borrar' post.id %}"> Eliminar </a>
+            <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'review_editar' review.id %}"> Editar </a>
+            <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'review_borrar' review.id %}"> Eliminar </a>
             <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'review_listados' %}"> Volver </a>
         </div> 
 {% endblock %}

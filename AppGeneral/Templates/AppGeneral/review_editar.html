@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block contenido %} 
-    <form action="{% url 'editar_post' post.id %}" method="POST"> {% csrf_token %} 
+    <form action="{% url 'review_editar' review.id %}" method="POST"> {% csrf_token %} 
         <table>
             {{ form.as_table }}
         </table>

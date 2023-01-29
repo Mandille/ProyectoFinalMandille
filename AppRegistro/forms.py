@@ -25,3 +25,15 @@ class Form_User_Editar(UserCreationForm):
         model = User
         fields = ['first_name', 'last_name', 'email']
         help_texts = {k:"" for k in fields} 
+
+class Form_Avatar(forms.Form):
+    imagen = forms.ImageField(label='Imagen')
+
+class Form_Url(forms.Form):
+    url = forms.URLField(label='URL', max_length=300)
+
+    def __str__(self):
+        return self.url
+
+class Form_Descripcion(forms.Form):
+    descripcion = forms.CharField(label='Descripcion', max_length=200, widget=forms.Textarea)

@@ -1,0 +1,19 @@
+{% extends "AppGeneral/sbs_index.html" %}
+
+{% load static %}
+
+{% block title %}
+    MENSAJES
+{% endblock %}
+
+{% block titulo %}
+    MENSAJES <br>
+    {{ mensaje }}
+{% endblock %}
+
+{% block contenido %} 
+    <div style="text-align: center; padding-top: 1%; padding-bottom: 1%;">
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'mensaje_enviar' %}"> Mensaje Nuevo </a>
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'mensaje_casilla' %}"> Casilla de Mensajes </a>
+    </div>
+{% endblock %} 

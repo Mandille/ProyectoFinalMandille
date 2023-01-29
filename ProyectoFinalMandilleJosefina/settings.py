@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'AppGeneral',
     'AppMensaje',
     'AppRegistro',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -132,4 +134,6 @@ LOGIN_URL = 'user_login'
 MEDIA_URL = '/Avatar/'
 
 MEDIA_ROOT = BASE_DIR / 'Avatar'
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 

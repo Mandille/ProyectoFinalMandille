@@ -1,0 +1,29 @@
+{% extends "AppGeneral/sbs_index.html" %}
+
+{% load static %}
+
+{% block title %}
+    MENSAJE DE {{mensaje.usuario}}
+{% endblock %}
+
+{% block titulo %}
+    MENSAJE
+{% endblock %}
+
+{% block contenido %} 
+    <div style="text-align: center;">
+        <h5>
+            {{mensaje.usuario}}
+        </h5>
+    </div>
+    <div style="text-align: center; ">
+        <p style="border: solid 1px; padding: 10px 5px ; width: 50%; display: inline-block; ">
+            {{ mensaje.mensaje }}
+        </p>
+    </div>
+    <div style="text-align: center;">
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'mensaje_responder' mensaje.id %}"> Responder </a>
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'mensaje_eliminar' mensaje.id %}"> Eliminar </a>
+        <a class="btn btn-primary btn-xm rounded-pill mt-5-1" href="{% url 'mensaje_casilla' %}"> Volver </a>
+    </div>
+{% endblock %} 
